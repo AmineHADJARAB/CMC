@@ -1,0 +1,42 @@
+{
+  "name": "gestion-tabac",
+  "version": "1.0.0",
+  "description": "Application de gestion de bureau de tabac (stock, caisse, achats, commandes, recharges, charges, rapports)",
+  "main": "main.js",
+  "author": "Amine HADJ ARAB",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:dir": "electron-builder --win --dir"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "app.klick.gestiontabac",
+    "productName": "Gestion Tabac",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Gestion Tabac"
+    }
+  }
+}
